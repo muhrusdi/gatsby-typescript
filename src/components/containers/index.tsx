@@ -8,6 +8,11 @@ const Container = styled.div(
   },
   ({ type }) => {
     switch (type) {
+      case "xl": {
+        return {
+          maxWidth: 1200
+        };
+      }
       case "lg": {
         return {
           maxWidth: 992
@@ -25,7 +30,7 @@ const Container = styled.div(
       }
       default:
         return {
-          maxWidth: 1200
+          maxWidth: "initial"
         };
     }
   }
