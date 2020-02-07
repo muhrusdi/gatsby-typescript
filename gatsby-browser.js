@@ -1,1 +1,1 @@
-import "components/global-styles/styles.css";
+import "components/styles/styles.css";
