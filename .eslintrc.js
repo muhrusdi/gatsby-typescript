@@ -33,6 +33,7 @@ module.exports = {
 		"import/no-extraneous-dependencies": [0, "error"],
 		"react/jsx-filename-extension": [0],
 		"import/extensions": [0],
+		"react/prop-types": [0],
 	},
 	settings: {
 		'import/resolver': {
