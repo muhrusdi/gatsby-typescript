@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
+const defaultProps = {
+  gutter: 16,
+  types: "default",
+};
+
+type Props = {
+  gutter: number,
+  type: string,
+} & typeof defaultProps;
+
 const Container = styled.div(
-  ({ gutter = 16 }) => ({
-    padding: `0 ${gutter}px`,
+  (props: Props) => ({
+    padding: `0 ${props.gutter}px`,
   }),
-  ({ type }) => {
-    switch (type) {
+  (props: Props) => {
+    switch (props.type) {
     case "xl": {
       return {
         maxWidth: 1200,

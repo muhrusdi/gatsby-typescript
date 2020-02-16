@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import Layout from "../layouts";
 import { HeroTitle } from "./styled";
@@ -11,7 +12,9 @@ const Home: React.FC = () => (
       `}
     >
       <HeroTitle>
-        <span style={{ color: "#663399" }}>Gatsby</span> Starter
+        <span style={{ color: "#663399" }}>Gatsby</span>
+        {" "}
+Starter
       </HeroTitle>
       <p>Project Starter for Gatsby.js</p>
     </div>
@@ -54,22 +57,22 @@ const Home: React.FC = () => (
         <h3>Technologies</h3>
         <ul>
           <li>
-            <span>✅ Styled Components v5</span>
+            <span aria-label="test" role="img">✅ Styled Components v5</span>
           </li>
           <li>
-            <span>✅ TypeScripts v3.7.5</span>
+            <span aria-label="test" role="img">✅ TypeScripts v3.7.5</span>
           </li>
           <li>
-            <span>✅ React Testing Library</span>
+            <span aria-label="test" role="img">✅ React Testing Library</span>
           </li>
           <li>
-            <span>✅ Framer Motion</span>
+            <span aria-label="test" role="img">✅ Framer Motion</span>
           </li>
           <li>
-            <span>✅ MDX</span>
+            <span aria-label="test" role="img">✅ MDX</span>
           </li>
           <li>
-            <span>✅ Lodash</span>
+            <span aria-label="test" role="img">✅ Lodash</span>
           </li>
         </ul>
       </div>
