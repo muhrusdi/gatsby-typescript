@@ -6,32 +6,26 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
+const defaultProps = {
+  lang: "id",
+  meta: [],
+  title: "Gatsby Starter",
+};
+
 type Props = {
-  description?: string,
-  lang?: string,
-  meta?: [],
-  title?: string,
-};
+  description?: string;
+  lang: string;
+  meta?: string[];
+  title: string;
+} & typeof defaultProps;
 
-type SiteProps = {
-  site: {
-    siteMetadata: {
-      title: string,
-      description: string,
-      keywords: string,
-      author: string,
-    },
-  },
-};
-
-const SEO: React.FC<Props | any> = ({
+const SEO: React.FC<Props> = ({
   description, lang, meta, title,
 }) => {
-  const { site } = useStaticQuery<SiteProps>(
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -49,7 +43,9 @@ const SEO: React.FC<Props | any> = ({
 
   return (
     <Helmet
-      htmlAttributes={{ lang }}
+      htmlAttributes={{
+        lang,
+      }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -90,17 +86,6 @@ const SEO: React.FC<Props | any> = ({
   );
 };
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.shape,
-  title: PropTypes.string.isRequired,
-};
-
-SEO.defaultProps = {
-  lang: "en",
-  meta: [],
-  description: "",
-};
+SEO.defaultProps = defaultProps;
 
 export default SEO;
